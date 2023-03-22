@@ -9,6 +9,12 @@ const TourItem = (props) => {
       </div>
 
       <p className='tours-info'>{props.info}</p>
+      <button
+        className='tours-button'
+        onClick={() => props.deleteTour(props.id)}
+      >
+        Not Interested
+      </button>
     </div>
   );
 };

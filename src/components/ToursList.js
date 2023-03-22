@@ -16,6 +16,7 @@ const ToursList = () => {
         setLoading(false);
         setTours(response.data);
       } catch (err) {
+        setLoading(false);
         console.log(err);
       }
     };
@@ -23,13 +24,19 @@ const ToursList = () => {
     getTours();
   }, []);
 
-  const toursList = tours.map((tour) => <ToursItem key={tour.id} {...tour} />);
+  const deleteTour = (id) => {
+    setTours((prevTour) => prevTour.filter((tour) => tour.id !== id));
+  };
+
+  const toursList = tours.map((tour) => (
+    <ToursItem key={tour.id} {...tour} deleteTour={deleteTour} />
+  ));
 
   return (
     <main className='tours-container'>
       <h1 className='tours-title'>Our Tours</h1>
       <div className='tours-list'>
-        {loading ? <h3>Loading...</h3> : toursList}
+        {loading ? <h3 className='tours-loading'>Loading...</h3> : toursList}
       </div>
     </main>
   );

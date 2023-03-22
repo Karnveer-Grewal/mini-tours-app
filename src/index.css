@@ -65,3 +65,16 @@ body {
   width: 70%;
   text-align: center;
 }
+
+.tours-loading {
+  margin: 15px 0;
+}
+
+.tours-button {
+  color: red;
+  border: 1px solid red;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 15px;
+}

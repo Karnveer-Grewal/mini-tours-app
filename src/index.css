@@ -78,3 +78,11 @@ body {
   border-radius: 5px;
   margin-top: 15px;
 }
+
+.tours-read-more {
+  color: blue;
+  border: none;
+  text-decoration: underline;
+  font-size: 1em;
+  margin-left: 5px;
+}

@@ -6,21 +6,21 @@ const ToursList = () => {
   const [tours, setTours] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const getTours = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get(
-          'https://course-api.com/react-tours-project'
-        );
-        setLoading(false);
-        setTours(response.data);
-      } catch (err) {
-        setLoading(false);
-        console.log(err);
-      }
-    };
+  const getTours = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        'https://course-api.com/react-tours-project'
+      );
+      setLoading(false);
+      setTours(response.data);
+    } catch (err) {
+      setLoading(false);
+      console.log(err);
+    }
+  };
 
+  useEffect(() => {
     getTours();
   }, []);
 
@@ -32,14 +32,25 @@ const ToursList = () => {
     <ToursItem key={tour.id} {...tour} deleteTour={deleteTour} />
   ));
 
-  return (
-    <main className='tours-container'>
-      <h1 className='tours-title'>Our Tours</h1>
-      <div className='tours-list'>
-        {loading ? <h3 className='tours-loading'>Loading...</h3> : toursList}
-      </div>
-    </main>
-  );
+  if (tours.length > 0) {
+    return (
+      <main className='tours-container'>
+        <h1 className='tours-title'>Our Tours</h1>
+        <div className='tours-list'>
+          {loading ? <h3 className='tours-loading'>Loading...</h3> : toursList}
+        </div>
+      </main>
+    );
+  } else {
+    return (
+      <main className='tours-container'>
+        <h1 className='tours-title'>No Tours Left</h1>
+        <button className='tours-refresh' onClick={() => getTours()}>
+          Refresh Tours
+        </button>
+      </main>
+    );
+  }
 };
 
 export default ToursList;

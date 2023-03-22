@@ -70,6 +70,8 @@ body {
   margin: 15px 0;
 }
 
+/* Button Styling */
+
 .tours-button {
   color: red;
   border: 1px solid red;
@@ -85,4 +87,14 @@ body {
   text-decoration: underline;
   font-size: 1em;
   margin-left: 5px;
+}
+
+.tours-refresh {
+  display: block;
+  background-color: #001524;
+  color: white;
+  padding: 10px;
+  margin: 50px auto;
+  font-size: 1.5em;
+  border-radius: 10px;
 }

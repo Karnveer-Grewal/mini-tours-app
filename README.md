@@ -1,3 +1,33 @@
+# Mini Tours Application
+
+This is a React application that fetches and renders tours data. The application allows one to expand the description to read more, remove a tour if 'not interested' and refresh and load all the tours again.
+
+## Frontend
+
+- HTML
+
+- CSS
+
+- JavaScript
+
+- React (hooks used: useState, useEffect)
+
+- API calls with Axios
+
+## Screenshots
+
+### Main Page - GET All Tours Available
+
+![Main](https://github.com/Karnveer-Grewal/mini-tours-app/blob/main/Screenshots/tours-main-page.JPG?raw=true)
+
+### Tour - Read More Details
+
+![Details](https://github.com/Karnveer-Grewal/mini-tours-app/blob/main/Screenshots/tours-read-more.JPG?raw=true)
+
+### Refresh All Tours
+
+![Refresh](https://github.com/Karnveer-Grewal/mini-tours-app/blob/main/Screenshots/tours-refresh.JPG?raw=true)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
